@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ApolloClient from "apollo-client";
-import {ApolloProvider} from "react-apollo";
+import {ApolloError, ApolloProvider} from "react-apollo";
+
 import SongList from "./components/SongList";
 
 const CLIENT = new ApolloClient({});
@@ -15,6 +16,6 @@ const Root = () => {
 };
 
 ReactDOM.render(
-  <Root />,
-  document.querySelector('#root')
+    <Root />,
+    document.querySelector('#root')
 );
