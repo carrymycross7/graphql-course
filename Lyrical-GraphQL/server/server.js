@@ -9,7 +9,7 @@ const app = express();
 
 // Local MongoDB compass connection
 // no atlast conncection
-const MONGO_URI = 'mongodb://localhost:27017/Test';
+const MONGO_URI = 'mongodb://localhost:27017/graphql-course';
 if (!MONGO_URI) {
   throw new Error('You must provide a Mongo Atlas URI');
 }

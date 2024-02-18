@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import ApolloClient from "apollo-client";
 import {ApolloError, ApolloProvider} from "react-apollo";
 
-const client = new ApolloClient({});
+import SongList from "./components/SongList";
+
+const CLIENT = new ApolloClient({});
+
 const Root = () => {
   return (
-      <ApolloProvider client={client}>
-        <div>
-          Lyrical
-        </div>
+      <ApolloProvider client={CLIENT}>
+        <SongList />
       </ApolloProvider>
   )
 };
