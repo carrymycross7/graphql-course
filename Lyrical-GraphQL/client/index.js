@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ApolloClient from "apollo-client";
 import {ApolloError, ApolloProvider} from "react-apollo";
-
+import gql from 'graphql-tag';
 import SongList from "./components/SongList";
 
 const CLIENT = new ApolloClient({});
@@ -14,6 +14,7 @@ const Root = () => {
       </ApolloProvider>
   )
 };
+
 
 ReactDOM.render(
     <Root />,
