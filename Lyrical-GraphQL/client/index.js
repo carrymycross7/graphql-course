@@ -1,3 +1,4 @@
+import './style/style.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, hashHistory, IndexRoute} from "react-router";
@@ -7,6 +8,8 @@ import gql from 'graphql-tag';
 import SongList from "./components/SongList";
 import App from './components/App';
 import SongCreate from "./components/SongCreate";
+import SongDetail from "./components/SongDetail";
+
 const CLIENT = new ApolloClient({});
 
 const Root = () => {
@@ -16,6 +19,7 @@ const Root = () => {
             <Route path="/" component={App}>
                 <IndexRoute components={SongList} />
                 <Route path="songs/new" component={SongCreate} />
+                <Route path='songs/:id' components={SongDetail} />
             </Route>
         </Router>
       </ApolloProvider>
