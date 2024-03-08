@@ -19,10 +19,10 @@ const LyricType = new GraphQLObjectType({
       type: require('./song_type'),
       resolve(parentValue) {
         return Lyric.findById(parentValue).populate('song')
-          .then(lyric => {
-            console.log(lyric)
-            return lyric.song
-          });
+            .then(lyric => {
+              console.log(lyric)
+              return lyric.song
+            });
       }
     }
   })
