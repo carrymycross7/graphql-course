@@ -1,19 +1,16 @@
-import React, {Component} from "react";
-import gql from "graphql-tag";
-import {graphql} from "react-apollo";
-
+import React, { Component } from 'react';
+import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
 
 class LyricCreate extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {content: ''};
+    this.state = { content: '' };
   }
 
   onSubmit(event) {
     event.preventDefault();
-
-    console.dir(this); // debug - remove
 
     this.props.mutate({
       variables: {
@@ -22,16 +19,17 @@ class LyricCreate extends Component {
       }
     }).then(() => this.setState({ content: '' }));
   }
+
   render() {
     return (
-        <form onSubmit={this.onSubmit.bind(this)}>
-          <label>Add a Lyric</label>
-          <input
-            value={this.state.content}
-            onChange={event => this.setState({content: event.target.value})}
-          />
-        </form>
-    )
+      <form onSubmit={this.onSubmit.bind(this)}>
+        <label>Add a Lyric</label>
+        <input
+          value={this.state.content}
+          onChange={event => this.setState({ content: event.target.value })}
+        />
+      </form>
+    );
   }
 }
 
@@ -42,6 +40,7 @@ const mutation = gql`
       lyrics {
         id
         content
+        likes
       }
     }
   }
